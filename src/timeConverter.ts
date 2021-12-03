@@ -1,3 +1,3 @@
 export function timeConverter(seconds: number): string {
-  return seconds !== 0 ? '1 second' : 'now';
+  return seconds !== 0 ? `${seconds} second` + (seconds > 1 ? 's' : '') : 'now';
 }
