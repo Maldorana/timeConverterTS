@@ -1,17 +1,22 @@
-export function timeConverter(seconds: number): string {
-  let time: string = '';
+export function timeConverter(inputSeconds: number): string {
+  let minutes: string = '';
+  let seconds: string = '';
 
-  if (seconds === 0) return 'now';
-  if (seconds >= 60) {
-    time +=
-      `${Math.floor(seconds / 60)} minute` + (seconds / 60 > 1 ? 's' : '');
-    seconds = seconds % 60;
+  if (inputSeconds === 0) return 'now';
+
+  if (inputSeconds >= 60) {
+    minutes =
+      `${Math.floor(inputSeconds / 60)}` +
+      (Math.floor(inputSeconds / 60) > 1 ? ' minutes' : ' minute');
+    inputSeconds = inputSeconds % 60;
   }
-  if (seconds !== 0) {
-    time +=
-      time === ''
-        ? `${seconds} second` + (seconds > 1 ? 's' : '')
-        : ` and ${seconds} second` + (seconds > 1 ? 's' : '');
+
+  if (inputSeconds < 60) {
+    seconds =
+      inputSeconds === 0
+        ? ''
+        : inputSeconds.toString() + (inputSeconds > 1 ? ' seconds' : ' second');
   }
-  return time;
+
+  return minutes + (minutes !== '' && seconds !== '' ? ' and ' : '') + seconds;
 }
