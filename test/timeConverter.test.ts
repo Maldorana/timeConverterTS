@@ -29,5 +29,8 @@ describe('timeConverter tests', () => {
     it("Should return '1 hour' if entered 3600", () => {
       expect(timeConverter(3600)).toBe('1 hour');
     });
+    it("Should return '2 hours' if entered 7200", () => {
+      expect(timeConverter(7200)).toBe('2 hours');
+    });
   });
 });
