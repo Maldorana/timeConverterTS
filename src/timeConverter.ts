@@ -7,8 +7,8 @@ export function timeConverter(inputSeconds: number): string {
 
   if (inputSeconds >= 3600) {
     hours =
-      `${Math.floor(inputSeconds / 60 / 60)}` +
-      (Math.floor(inputSeconds / 60 / 60) > 1 ? ' hours' : ' hour');
+      `${Math.floor(inputSeconds / 3600)}` +
+      (Math.floor(inputSeconds / 3600) > 1 ? ' hours' : ' hour');
     inputSeconds = inputSeconds % 3600;
   }
 

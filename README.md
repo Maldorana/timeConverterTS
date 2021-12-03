@@ -10,14 +10,9 @@ The function must accept a non-negative integer. If it is zero, it just returns 
 
 | INPUT | OUTPUT                            |
 | ----- | --------------------------------- |
+| 0     | 'Now'                             |
 | 10    | '10 Seconds'                      |
 | 60    | '1 minute'                        |
 | 122   | '2 minutes and 2 seconds'         |
 | 3600  | '1 hour'                          |
 | 7264  | '2 hours, 1 minute and 4 seconds' |
-
-## Edge cases
-
-| INPUT | OUTPUT |
-| ----- | ------ |
-| 0     | 'Now'  |
