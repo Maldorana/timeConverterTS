@@ -28,7 +28,8 @@ export function timeConverter(inputSeconds: number): string {
 
   return (
     hours +
-    (hours !== '' && minutes !== '' ? ' and ' : '') +
+    (hours !== '' && minutes !== '' && seconds !== '' ? ', ' : '') +
+    (hours !== '' && minutes !== '' && seconds === '' ? ' and ' : '') +
     minutes +
     (minutes !== '' && seconds !== '' ? ' and ' : '') +
     seconds
