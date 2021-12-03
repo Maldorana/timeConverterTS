@@ -1,5 +1,17 @@
 export function timeConverter(seconds: number): string {
-  if (seconds >= 60)
-    return `${seconds / 60} minute` + (seconds / 60 > 1 ? 's' : '');
-  return seconds !== 0 ? `${seconds} second` + (seconds > 1 ? 's' : '') : 'now';
+  let time: string = '';
+
+  if (seconds === 0) return 'now';
+  if (seconds >= 60) {
+    time +=
+      `${Math.floor(seconds / 60)} minute` + (seconds / 60 > 1 ? 's' : '');
+    seconds = seconds % 60;
+  }
+  if (seconds !== 0) {
+    time +=
+      time === ''
+        ? `${seconds} second` + (seconds > 1 ? 's' : '')
+        : ` and ${seconds} second` + (seconds > 1 ? 's' : '');
+  }
+  return time;
 }
