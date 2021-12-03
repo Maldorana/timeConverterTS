@@ -17,5 +17,8 @@ describe('timeConverter tests', () => {
     it("Should return '1 minute' if entered 60", () => {
       expect(timeConverter(60)).toBe('1 minute');
     });
+    it("Should return '2 minutes' if entered 120", () => {
+      expect(timeConverter(120)).toBe('2 minutes');
+    });
   });
 });
