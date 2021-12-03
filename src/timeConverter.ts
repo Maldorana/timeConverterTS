@@ -9,7 +9,7 @@ export function timeConverter(inputSeconds: number): string {
     hours =
       `${Math.floor(inputSeconds / 60 / 60)}` +
       (Math.floor(inputSeconds / 60 / 60) > 1 ? ' hours' : ' hour');
-    inputSeconds = inputSeconds % 60;
+    inputSeconds = inputSeconds % 3600;
   }
 
   if (inputSeconds >= 60) {
@@ -28,6 +28,7 @@ export function timeConverter(inputSeconds: number): string {
 
   return (
     hours +
+    (hours !== '' && minutes !== '' ? ' and ' : '') +
     minutes +
     (minutes !== '' && seconds !== '' ? ' and ' : '') +
     seconds
