@@ -24,4 +24,10 @@ describe('timeConverter tests', () => {
       expect(timeConverter(121)).toBe('2 minutes and 1 second');
     });
   });
+
+  describe('minutes and seconds', () => {
+    it("Should return '1 hour' if entered 3600", () => {
+      expect(timeConverter(3600)).toBe('1 hour');
+    });
+  });
 });

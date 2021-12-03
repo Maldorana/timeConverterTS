@@ -1,8 +1,14 @@
 export function timeConverter(inputSeconds: number): string {
   let minutes: string = '';
   let seconds: string = '';
+  let hours: string = '';
 
   if (inputSeconds === 0) return 'now';
+
+  if (inputSeconds >= 3600) {
+    hours = `${Math.floor(inputSeconds / 60 / 60)}` + ' hour';
+    inputSeconds = inputSeconds % 60;
+  }
 
   if (inputSeconds >= 60) {
     minutes =
@@ -18,5 +24,10 @@ export function timeConverter(inputSeconds: number): string {
         : inputSeconds.toString() + (inputSeconds > 1 ? ' seconds' : ' second');
   }
 
-  return minutes + (minutes !== '' && seconds !== '' ? ' and ' : '') + seconds;
+  return (
+    hours +
+    minutes +
+    (minutes !== '' && seconds !== '' ? ' and ' : '') +
+    seconds
+  );
 }
