@@ -42,4 +42,12 @@ describe('timeConverter tests', () => {
       expect(timeConverter(7321)).toBe('2 hours, 2 minutes and 1 second');
     });
   });
+
+  describe('days, hours, minutes and seconds', () => {
+    it("Should return '2 days, 1 hour, 30 minutes and 1 second' if entered 178201", () => {
+      expect(timeConverter(178201)).toBe(
+        '2 days, 1 hour, 30 minutes and 1 second'
+      );
+    });
+  });
 });

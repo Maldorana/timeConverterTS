@@ -3,6 +3,14 @@ export function timeConverter(seconds: number): string {
 
   if (seconds === 0) return 'now';
 
+  if (seconds >= 86400) {
+    time.push(
+      `${Math.floor(seconds / 86400)}` +
+        (Math.floor(seconds / 86400) > 1 ? ' days' : ' day')
+    );
+    seconds = seconds % 86400;
+  }
+
   if (seconds >= 3600) {
     time.push(
       `${Math.floor(seconds / 3600)}` +

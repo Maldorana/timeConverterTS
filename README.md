@@ -16,6 +16,6 @@ The function must accept a non-negative integer. If it is zero, it just returns 
 | 122      | '2 minutes and 2 seconds'                 |
 | 3600     | '1 hour'                                  |
 | 7264     | '2 hours, 1 minute and 4 seconds'         |
-| 86400    | '1 days'                                  |
-| 178200   | '2 days, 1 hour, 30 minutes and 1 second' |
+| 86400    | '1 day'                                   |
+| 178201   | '2 days, 1 hour, 30 minutes and 1 second' |
 | 31536000 | '1 year'                                  |
