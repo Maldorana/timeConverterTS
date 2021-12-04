@@ -44,6 +44,9 @@ describe('timeConverter tests', () => {
   });
 
   describe('days, hours, minutes and seconds', () => {
+    it("Should return '1 day' if entered 86400", () => {
+      expect(timeConverter(86400)).toBe('1 day');
+    });
     it("Should return '2 days, 1 hour, 30 minutes and 1 second' if entered 178201", () => {
       expect(timeConverter(178201)).toBe(
         '2 days, 1 hour, 30 minutes and 1 second'
@@ -52,6 +55,9 @@ describe('timeConverter tests', () => {
   });
 
   describe('years, days, hours, minutes and seconds', () => {
+    it("Should return '1 year' if entered 31536000", () => {
+      expect(timeConverter(31536000)).toBe('1 year');
+    });
     it("Should return '2 years, 2 days, 1 hour, 30 minutes and 1 second' if entered 63250201", () => {
       expect(timeConverter(63250201)).toBe(
         '2 years, 2 days, 1 hour, 30 minutes and 1 second'
