@@ -3,6 +3,14 @@ export function timeConverter(seconds: number): string {
 
   if (seconds === 0) return 'now';
 
+  if (seconds >= 31536000) {
+    time.push(
+      `${Math.floor(seconds / 31536000)}` +
+        (Math.floor(seconds / 31536000) > 1 ? ' years' : ' year')
+    );
+    seconds = seconds % 31536000;
+  }
+
   if (seconds >= 86400) {
     time.push(
       `${Math.floor(seconds / 86400)}` +

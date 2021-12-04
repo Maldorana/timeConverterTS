@@ -50,4 +50,12 @@ describe('timeConverter tests', () => {
       );
     });
   });
+
+  describe('years, days, hours, minutes and seconds', () => {
+    it("Should return '2 years, 2 days, 1 hour, 30 minutes and 1 second' if entered 63250201", () => {
+      expect(timeConverter(63250201)).toBe(
+        '2 years, 2 days, 1 hour, 30 minutes and 1 second'
+      );
+    });
+  });
 });
